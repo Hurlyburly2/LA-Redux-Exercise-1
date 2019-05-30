@@ -4,7 +4,20 @@ const initialState = {
 }
 
 const scoreReducer = (state = initialState, action) => {
-  
+  switch(action.type) {
+    case ADD_PLAYER_ONE_POINT:
+      const playerOneNewScore = state.playerOneScore + 1
+      return Object.assign({}, state, {
+        playerOneScore: playerOneNewScore
+      })
+    case ADD_PLAYER_TWO_POINT:
+      const playerTwoNewScore = state.playerTwoScore + 1
+      return Object.assign({}, state, {
+        playerTwoScore: playerTwoNewScore
+      })
+    default:
+      return state;
+  }
 }
 
 const ADD_PLAYER_ONE_POINT = 'ADD_PLAYER_ONE_POINT'
