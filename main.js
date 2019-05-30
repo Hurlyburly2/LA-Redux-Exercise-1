@@ -43,8 +43,11 @@ playerTwoScoreButton.addEventListener('click', () => {
 
 const store = createStore(scoreReducer)
 
+const playerOneScoreSection = document.getElementById('player-one-score')
+const playerTwoScoreSection = document.getElementById('player-two-score')
 const render = () => {
-  console.log(store.getState())
+  playerOneScoreSection.innerHTML = store.getState().playerOneScore
+  playerTwoScoreSection.innerHTML = store.getState().playerTwoScore
 }
 
 render();
