@@ -1,3 +1,5 @@
+const { createStore } = Redux;
+
 const initialState = {
   playerOneScore: 0,
   playerTwoScore: 0
@@ -38,3 +40,12 @@ playerTwoScoreButton.addEventListener('click', () => {
     type: ADD_PLAYER_TWO_POINT
   })
 })
+
+const store = createStore(scoreReducer)
+
+const render = () => {
+  console.log(store.getState())
+}
+
+render();
+store.subscribe(render);
